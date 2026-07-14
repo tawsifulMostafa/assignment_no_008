@@ -1,13 +1,17 @@
 import { betterAuth } from "better-auth";
-import { mongodbAdapter } from "better-auth/adapters/mongodb";
 import { MongoClient } from "mongodb";
-const client = new MongoClient(process.env.BETTER_AUTH_LINKING);
-const db = client.db("assignment_task");
+import { mongodbAdapter } from "better-auth/adapters/mongodb";
+
+const client = new MongoClient(process.env.BETTER_AUTH_URI_DB);
+
+const db = client.db("assignment_008_data");
+
 export const auth = betterAuth({
-    emailAndPassword: {
-        enabled: true,
-    },
-    database: mongodbAdapter(db, {
-        client
-    }),
+  emailAndPassword: {
+    enabled: true,
+  },
+  database: mongodbAdapter(db, {
+
+    client
+  }),
 });

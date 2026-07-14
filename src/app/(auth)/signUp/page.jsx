@@ -1,8 +1,9 @@
 "use client"
 import { authClient } from "@/app/lib/auth-client";
-import { Check, File } from "@gravity-ui/icons";
-import { Avatar, Button, FieldError, Form, Input, Label, TextField } from "@heroui/react";
+import { Check, CheckDouble, File } from "@gravity-ui/icons";
+import { Button, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
+
 const signUpPage = () => {
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -14,13 +15,12 @@ const signUpPage = () => {
             name: newUserData.name,
             email: newUserData.email,
             password: newUserData.password,
-            image : newUserData.image ,
-      
+            image: newUserData.image,
+             callbackURL: "/",
 
         });
-      
-
-    }
+        console.log(data, error);
+    };
 
     return (
         <div>
@@ -75,10 +75,11 @@ const signUpPage = () => {
                     <FieldError />
                 </TextField>
 
-                <div className="flex shadow-xl p-2 border rounded-xl "><File></File> <input
-                    type="file"
-                    accept="image/*"
-                /></div>
+                <TextField>
+                       <Label>Image</Label>
+                    <Input name="image" placeholder="paste your photo URL"></Input>
+                    <FieldError />
+                </TextField>
 
                 <div className="flex gap-2 mx-auto ">
                     <Button className="rounded-xl" type="submit">
