@@ -3,11 +3,10 @@
 import { signOut, useSession } from "@/app/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname } from 'next/navigation'
 import NavLink from "./NavLink";
 
 const NavPage = () => {
-    const pathname = usePathname();
+   
     const { data, isPending } = useSession();
 
     if (isPending) {
