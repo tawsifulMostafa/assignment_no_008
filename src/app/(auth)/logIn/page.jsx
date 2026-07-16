@@ -3,10 +3,19 @@ import { authClient } from "@/app/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import { Button, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
+import { useEffect } from "react";
 import { toast } from "sonner";
 
 
 const LogInPage = () => {
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        if (searchParams.get("reason") === "bookId-login-req") {
+            toast.error("Please login first");
+        }
+    }, []);
     const onSubmit = async (e) => {
         e.preventDefault();
         const loginFormdata = new FormData(e.currentTarget);
@@ -23,7 +32,7 @@ const LogInPage = () => {
         } else {
             toast.success("Login successful! Welcome back");
         }
-     
+
     };
 
     return (
@@ -72,7 +81,7 @@ const LogInPage = () => {
                     <Link href={'/signUp'}><Button>Register ?</Button></Link>
 
                 </div>
-                
+
             </Form>
         </div>
     );

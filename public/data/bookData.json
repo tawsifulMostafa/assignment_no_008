@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "description": "A practical guide to building good habits, breaking bad ones, and mastering tiny behaviors that lead to remarkable results.",
+    "category": "Science",
+    "available_quantity": 10,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Clean Code",
+    "author": "Robert C. Martin",
+    "description": "A handbook of agile software craftsmanship that teaches how to write clean, maintainable code.",
+    "category": "Tech",
+    "available_quantity": 7,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780132350884-L.jpg"
+  },
+  {
+    "id": 3,
+    "title": "The Pragmatic Programmer",
+    "author": "Andrew Hunt & David Thomas",
+    "description": "A classic guide covering software development best practices and practical programming techniques.",
+    "category": "Tech",
+    "available_quantity": 5,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780135957059-L.jpg"
+  },
+  {
+    "id": 4,
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "description": "Learn how focused work can help you achieve greater productivity in a distracted world.",
+    "category": "Tech",
+    "available_quantity": 9,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9781455586691-L.jpg"
+  },
+  {
+    "id": 5,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "description": "A timeless novel about following your dreams and discovering your personal legend.",
+    "category": "Story",
+    "available_quantity": 12,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780061122415-L.jpg"
+  },
+  {
+    "id": 6,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "description": "A Pulitzer Prize-winning novel exploring justice, morality, and compassion.",
+    "category": "Story",
+    "available_quantity": 8,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780060935467-L.jpg"
+  },
+  {
+    "id": 7,
+    "title": "The Hobbit",
+    "author": "J. R. R. Tolkien",
+    "description": "Bilbo Baggins embarks on an unforgettable journey through Middle-earth.",
+    "category": "Story",
+    "available_quantity": 6,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780547928227-L.jpg"
+  },
+  {
+    "id": 8,
+    "title": "A Brief History of Time",
+    "author": "Stephen Hawking",
+    "description": "An accessible introduction to cosmology, black holes, and the origins of the universe.",
+    "category": "Science",
+    "available_quantity": 4,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780553380163-L.jpg"
+  },
+  {
+    "id": 9,
+    "title": "The Selfish Gene",
+    "author": "Richard Dawkins",
+    "description": "A groundbreaking book explaining evolution through the concept of the gene.",
+    "category": "Science",
+    "available_quantity": 5,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780199291151-L.jpg"
+  },
+  {
+    "id": 10,
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "description": "A fascinating exploration of the history and evolution of humankind.",
+    "category": "Science",
+    "available_quantity": 11,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780062316110-L.jpg"
+  },
+  {
+    "id": 11,
+    "title": "Introduction to Algorithms",
+    "author": "Thomas H. Cormen",
+    "description": "The definitive textbook covering algorithms, data structures, and computational techniques.",
+    "category": "Tech",
+    "available_quantity": 3,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780262046305-L.jpg"
+  },
+  {
+    "id": 12,
+    "title": "The Little Prince",
+    "author": "Antoine de Saint-Exupéry",
+    "description": "A beloved classic that shares profound lessons about love, life, and human nature.",
+    "category": "Story",
+    "available_quantity": 14,
+    "image_url": "https://covers.openlibrary.org/b/isbn/9780156012195-L.jpg"
+  }
+]

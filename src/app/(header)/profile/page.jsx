@@ -1,9 +1,10 @@
-import React from 'react';
 
-const ProfilePage = () => {
+const ProfilePage =async () => {
+     
+    
     return (
         <div>
-            my profile
+            sorry
         </div>
     );
 };
