@@ -3,8 +3,11 @@
 import { signOut, useSession } from "@/app/lib/auth-client";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from 'next/navigation'
+import NavLink from "./NavLink";
 
 const NavPage = () => {
+    const pathname = usePathname();
     const { data, isPending } = useSession();
 
     if (isPending) {
@@ -20,10 +23,10 @@ const NavPage = () => {
     return (
         <div className="navbar bg-base-100 shadow-md px-4 lg:px-10">
 
-            {/* Mobile Menu */}
+            {/* Logo + Mobile Dropdown */}
             <div className="navbar-start">
-                <div className="dropdown lg:hidden">
-                    <label tabIndex={0} className="btn btn-ghost">
+                <div className="dropdown">
+                    <label tabIndex={0} className="btn btn-ghost lg:hidden">
                         <svg
                             xmlns="http://www.w3.org/2000/svg"
                             className="h-5 w-5"
@@ -40,21 +43,14 @@ const NavPage = () => {
                         </svg>
                     </label>
 
+                    {/* Mobile dropdown menu */}
                     <ul
                         tabIndex={0}
-                        className="menu menu-sm dropdown-content bg-base-100 rounded-box z-50 mt-3 w-52 p-2 shadow"
+                        className="menu menu-sm dropdown-content mt-3 z-1 p-2 shadow bg-base-100 rounded-box w-52"
                     >
-                        <li>
-                            <Link href="/home">Home</Link>
-                        </li>
-
-                        <li>
-                            <Link href="/books">All Books</Link>
-                        </li>
-
-                        <li>
-                            <Link href="/profile">My Profile</Link>
-                        </li>
+                        <li><NavLink href="/">Home</NavLink></li>
+                        <li><NavLink href="/books">Books</NavLink></li>
+                        <li><NavLink href="/profile">Profile</NavLink></li>
                     </ul>
                 </div>
 
@@ -66,12 +62,10 @@ const NavPage = () => {
                         height={45}
                         alt="logo"
                     />
-
                     <div>
                         <h2 className="text-2xl md:text-3xl font-bold text-primary">
                             Mango
                         </h2>
-
                         <p className="hidden md:block text-xs text-gray-500">
                             Book Borrowing Platform
                         </p>
@@ -79,32 +73,20 @@ const NavPage = () => {
                 </Link>
             </div>
 
-            {/* Desktop Menu */}
-            <div className="navbar-center hidden lg:flex">
-                <ul className="menu menu-horizontal gap-2 px-1 font-medium">
-                    <li>
-                        <Link href="/home">Home</Link>
-                    </li>
-
-                    <li>
-                        <Link href="/books">All Books</Link>
-                    </li>
-
-                    <li>
-                        <Link href="/profile">My Profile</Link>
-                    </li>
-                </ul>
+            {/* Desktop Nav Links */}
+            <div className="navbar-center hidden lg:flex gap-4">
+                <NavLink href="/">Home</NavLink>
+                <NavLink href="/books">Books</NavLink>
+                <NavLink href="/profile">Profile</NavLink>
             </div>
 
             {/* Right Side */}
             <div className="navbar-end gap-3">
-
                 {user ? (
                     <>
                         <p className="hidden md:block">
                             Welcome, <span className="font-semibold">{user.name}</span>
                         </p>
-
                         <button
                             className="btn btn-error btn-sm"
                             onClick={() => signOut()}
@@ -117,7 +99,6 @@ const NavPage = () => {
                         Sign In
                     </Link>
                 )}
-
             </div>
         </div>
     );

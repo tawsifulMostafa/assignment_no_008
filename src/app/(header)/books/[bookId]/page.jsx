@@ -57,7 +57,7 @@ const BookDetailsPage = async ({ params }) => {
                     <p>category:{book.category}</p>
 
                     <div className="card-actions justify-end">
-                        <Button><Link href='/books'>Back</Link></Button>
+                        <Button><Link href='/books'>Borrow This Book </Link></Button>
                     </div>
                 </div>
             </div>
