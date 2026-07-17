@@ -1,13 +1,19 @@
-import Dashboard from "@/Components/Dashboard/Dashboard";
 
 
-export default function Home() {
+import FeaturedBooks from "@/Components/Home/FeatureBook/FeaturedBooks";
+import HomeBanner from "@/Components/Home/HomeBanner/HomeBanner"
+ 
+const HomePage = async () => {
   return (
     <div>
-
-          <Dashboard></Dashboard>
-
+      <HomeBanner></HomeBanner>
+      <FeaturedBooks></FeaturedBooks>
 
     </div>
   );
 }
+export default HomePage;
+
+
+
+
