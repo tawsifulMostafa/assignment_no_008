@@ -14,6 +14,7 @@ const Footer = () => {
                     alt="footer Image"
                     src="/asset/footer.png"
                     fill
+                    sizes="(max-width: 768px) 100vw, 25vw"
                     className="object-cover"
                     style={{ filter: "hue-rotate(260deg) saturate(1.4) brightness(0.45)" }}
                 />

@@ -15,6 +15,7 @@ const HomeBanner = () => {
                         src="/asset/banner.png"
                         alt="Banner"
                         fill
+                        sizes="(max-width: 768px) 100vw, 25vw"
                         className="object-cover"
                         priority
                     />
