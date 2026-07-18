@@ -4,7 +4,7 @@ Mango is a modern online book borrowing platform built with Next.js, Better Auth
 
 ## 🌐 Live Website
 
-haven't deployed yet
+(https://assignment-no-0008.vercel.app)
 
 ## 🚀 Features
 
@@ -24,15 +24,16 @@ haven't deployed yet
 
 - Next.js (App Router)
 - React
-- TypeScript
+- JavaScript
 - Tailwind CSS
 - MongoDB
 - Better Auth
 - HeroUI
 - Gravity UI Icons
-- Swiper.js
+- spring web
 - Sonner
 - React Marquee
+
 
 ## 📦 NPM Packages Used
 
@@ -90,7 +91,7 @@ Create a `.env.local` file and add the required environment variables.
 ```env
 BETTER_AUTH_SECRET=
 BETTER_AUTH_URL=
-MONGODB_URI=
+BETTER_AUTH_URI_DB=
 
 GOOGLE_CLIENT_ID=
 GOOGLE_CLIENT_SECRET=
