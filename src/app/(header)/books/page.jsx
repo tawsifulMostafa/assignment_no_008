@@ -1,17 +1,13 @@
 import SearchBooks from "./search";
-
+import { db } from "@/app/lib/auth";
 
 const BooksPage = async () => {
-    const booksRes = await fetch("http://localhost:3000/data/bookData.json");
-    const books = await booksRes.json();
-    return (
-        <SearchBooks books={books} />
-    );
+    const books = (await db.collection("data").find().toArray()).map((book) => ({
+        ...book,
+        _id: book._id.toString(),
+    }));
+
+    return <SearchBooks books={books} />;
 };
+
 export default BooksPage;
-
-
-
-
-
-

@@ -59,6 +59,6 @@ export default function SearchBooks({ books }) {
             </div>
         </Suspense>
     );
-}
+};
 
 

@@ -1,13 +1,14 @@
 import { getSession } from "@/app/lib/session";
+import { db } from "@/app/lib/auth";
 import { Button } from "@heroui/react";
 import Image from "next/image";
 import Link from "next/link";
 import { redirect } from "next/navigation";
 
-export const dynamic = 'force-dynamic' 
+export const dynamic = "force-dynamic";
 
 const BookDetailsPage = async ({ params }) => {
-    const sessionCheck = await getSession()
+    const sessionCheck = await getSession();
 
     if (!sessionCheck) {
         redirect("/logIn?reason=bookId-login-req");
@@ -15,13 +16,9 @@ const BookDetailsPage = async ({ params }) => {
 
     const { bookId } = await params;
 
-    const booksRes = await fetch(
-        "http://localhost:3000/data/bookData.json",
-        { cache: "no-store" }
-    );
-
-    const books = await booksRes.json();
-    const book = books.find((b) => b.id === Number(bookId));
+    const book = await db.collection("data").findOne({
+        id: Number(bookId),
+    });
 
     if (!book) {
         return <div>Book not found.</div>;
@@ -32,18 +29,20 @@ const BookDetailsPage = async ({ params }) => {
             <figure>
                 <Image
                     src={book.image_url}
-                    alt="Book Image"
+                    alt={book.title}
                     width={300}
                     height={300}
                 />
             </figure>
+
             <div className="card-body">
                 <h2 className="card-title">{book.title}</h2>
                 <p>{book.description}</p>
-                <p>category: {book.category}</p>
+                <p>Category: {book.category}</p>
+
                 <div className="card-actions justify-end">
                     <Button>
-                        <Link href='/books'>Borrow This Book</Link>
+                        <Link href="/books">Borrow This Book</Link>
                     </Button>
                 </div>
             </div>

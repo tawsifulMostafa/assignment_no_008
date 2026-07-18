@@ -1,13 +1,7 @@
 "use client";
 
 import { authClient } from "@/app/lib/auth-client";
-import {
-    Button,
-    FieldError,
-    Input,
-    Label,
-    TextField,
-} from "@heroui/react";
+import { Button, FieldError, Input, Label, TextField } from "@heroui/react";
 import { Check } from "lucide-react";
 import { useRouter } from "next/navigation";
 

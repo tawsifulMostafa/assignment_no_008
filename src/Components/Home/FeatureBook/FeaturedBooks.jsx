@@ -1,15 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "@gravity-ui/icons";
+import { db } from "@/app/lib/auth";
 
 const FeaturedBooks = async () => {
-    const BooksRes = await fetch("http://localhost:3000/data/bookData.json");
-    const totalBooks = await BooksRes.json();
+    const totalBooks = await db.collection("data").find().toArray();
     const books = totalBooks.slice(0, 4);
 
     return (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        
             <div className="flex flex-col sm:flex-row justify-between items-center gap-4 mb-8">
                 <h2 className="text-3xl font-bold">Featured Books</h2>
 
@@ -22,7 +21,6 @@ const FeaturedBooks = async () => {
                 </Link>
             </div>
 
-      
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                 {books.map((book) => (
                     <div

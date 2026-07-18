@@ -4,7 +4,7 @@ import FeaturedBooks from "@/Components/Home/FeatureBook/FeaturedBooks";
 import HomeBanner from "@/Components/Home/HomeBanner/HomeBanner"
 import Premium from "@/Components/Home/Premium/Premium";
  
-const HomePage = async () => {
+const HomePage =  () => {
   return (
     <div>
       <HomeBanner></HomeBanner>
