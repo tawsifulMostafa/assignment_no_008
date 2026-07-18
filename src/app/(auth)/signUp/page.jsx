@@ -1,11 +1,20 @@
 "use client"
-import { authClient } from "@/app/lib/auth-client";
-import { Check, CheckDouble, File } from "@gravity-ui/icons";
+import { authClient, signIn } from "@/app/lib/auth-client";
+import { Check } from "@gravity-ui/icons";
 import { Button, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
+import { toast } from "sonner";
 
 const signUpPage = () => {
+    const handleGoogleLogin = async () => {
+        await signIn.social({
+            provider: "google",
+        });
+
+    };
+
     const onSubmit = async (e) => {
+
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const newUserData = Object.fromEntries(formData.entries());
@@ -16,15 +25,19 @@ const signUpPage = () => {
             email: newUserData.email,
             password: newUserData.password,
             image: newUserData.image,
-             callbackURL: "/",
+            callbackURL: "/logIn"
+
 
         });
-        console.log(data, error);
+        if (!error) {
+            toast.success("Account created successfully!");
+            router.push("/");
+        }
     };
 
     return (
         <div>
-
+            <Button className="mx-auto items-center p-4 m-4" onClick={handleGoogleLogin}>Login With Google</Button>
             <Form className="flex flex-col lg:md:w-96 gap-4 mx-auto border border-white lg:md:p-8 p-2 m-4 lg:md:8 item-center rounded-3xl " onSubmit={onSubmit}>
                 <TextField
                     isRequired
@@ -76,7 +89,7 @@ const signUpPage = () => {
                 </TextField>
 
                 <TextField>
-                       <Label>Image</Label>
+                    <Label>Image</Label>
                     <Input name="image" placeholder="paste your photo URL"></Input>
                     <FieldError />
                 </TextField>

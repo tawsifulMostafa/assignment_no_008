@@ -1,5 +1,5 @@
 "use client"
-import { authClient } from "@/app/lib/auth-client";
+import { authClient, signIn } from "@/app/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import { Button, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
@@ -9,6 +9,12 @@ import { toast } from "sonner";
 
 const LoginForm = () => {
     const searchParams = useSearchParams();
+    const handleGoogleLogin = async () => {
+        await signIn.social({
+            provider: "google",
+        });
+
+    }
 
     useEffect(() => {
         if (searchParams.get("reason") === "bookId-login-req") {
@@ -36,6 +42,7 @@ const LoginForm = () => {
 
     return (
         <div>
+             <Button className="mx-auto items-center p-4 m-4" onClick={handleGoogleLogin}>Login With Google</Button>
             <Form className="flex flex-col lg:md:w-96 gap-4 lg:md:mx-auto border border-b-cyan-700 lg:md:p-8 p-4 m-4 lg:md:8 item-center rounded-3xl " onSubmit={onSubmit}>
                 <TextField
                     isRequired

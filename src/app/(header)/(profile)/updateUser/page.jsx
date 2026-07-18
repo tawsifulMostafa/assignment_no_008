@@ -33,15 +33,12 @@ const UpdateUserPage = () => {
         }
     };
 
-
-
-
-
     return (
-        <div>
+        <div className="p-5 m-5">
+            <Button onClick={handleGoogleLogin}>Login With Google</Button>
             <form
                 onSubmit={onSubmit}
-                className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4 justify-center mx-auto"
+                className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-20 justify-center mx-auto"
             >
                 <TextField
                     isRequired
