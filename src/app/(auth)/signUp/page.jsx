@@ -37,7 +37,6 @@ const signUpPage = () => {
 
     return (
         <div>
-            <Button className="mx-auto items-center p-4 m-4" onClick={handleGoogleLogin}>Login With Google</Button>
             <Form className="flex flex-col lg:md:w-96 gap-4 mx-auto border border-white lg:md:p-8 p-2 m-4 lg:md:8 item-center rounded-3xl " onSubmit={onSubmit}>
                 <TextField
                     isRequired
@@ -101,6 +100,8 @@ const signUpPage = () => {
                     </Button>
                 </div>
                 <p className="text-gray-500">Already have an Account ? <Link className=" text-black ml-4 border border-[#11120e] p-1 px-4 rounded bg-green-400" href="/logIn">Login</Link></p>
+                <Button className="btn text-green-400 border border-green-300 p-3 my-4" onClick={handleGoogleLogin}>Login With Google</Button>
+
             </Form>
         </div>
     );
