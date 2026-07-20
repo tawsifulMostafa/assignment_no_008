@@ -36,8 +36,12 @@ const signUpPage = () => {
     };
 
     return (
+        
         <div>
-            <Form className="flex flex-col lg:md:w-96 gap-4 mx-auto border border-white lg:md:p-8 p-2 m-4 lg:md:8 item-center rounded-3xl " onSubmit={onSubmit}>
+            <div className="text-center text-green-500 font-bold text-[36px] p-4">
+                Register
+            </div>
+            <Form className="flex flex-col lg:md:w-96 gap-4 mx-auto border border-black lg:md:p-8 p-2 m-4 lg:md:8 item-center rounded-3xl " onSubmit={onSubmit}>
                 <TextField
                     isRequired
                     name="name"

@@ -35,7 +35,7 @@ const UpdateUserPage = () => {
 
     return (
         <div className="p-5 m-5">
-            
+
             <form
                 onSubmit={onSubmit}
                 className="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-20 justify-center mx-auto"

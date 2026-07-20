@@ -24,7 +24,7 @@ export default function SearchBooks({ books }) {
                     <Label>Search</Label>
                     <SearchField.Group>
                         <SearchField.SearchIcon />
-                        <SearchField.Input onChange={(e) => setTitle(e.target.value)} className="w-[280px]" placeholder="Search..." />
+                        <SearchField.Input onChange={(e) => setTitle(e.target.value)} className="w-70" placeholder="Search..." />
                         <SearchField.ClearButton />
                     </SearchField.Group>
                 </SearchField>

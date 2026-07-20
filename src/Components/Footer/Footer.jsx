@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 import { LogoApple, LogoFacebook, LogoGithub, LogoLinkedin } from "@gravity-ui/icons";
-import { BookOpen } from "lucide-react";
+import { BookOpen, X } from "lucide-react";
 import Link from "next/link";
 
 const Footer = () => {
@@ -49,8 +49,8 @@ const Footer = () => {
                                 <LogoFacebook size={18} />
                             </Link>
                             <Link
-                                href="/"
-                                aria-label="Instagram"
+                                href="https://github.com/tawsifulMostafa/assignment_no_008"
+                                aria-label="Github"
                                 className="p-2 rounded-full bg-purple-700/60 hover:bg-purple-500 transition-colors duration-200"
                             >
                                 <LogoGithub size={18} />
@@ -67,7 +67,7 @@ const Footer = () => {
                                 aria-label="Twitter"
                                 className="p-2 rounded-full bg-purple-700/60 hover:bg-purple-500 transition-colors duration-200"
                             >
-                               <LogoApple></LogoApple>  
+                               <X></X>
                             </Link>
                         </div>
                     </div>
