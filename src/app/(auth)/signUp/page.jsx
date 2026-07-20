@@ -3,9 +3,11 @@ import { authClient, signIn } from "@/app/lib/auth-client";
 import { Check } from "@gravity-ui/icons";
 import { Button, FieldError, Form, Input, Label, TextField } from "@heroui/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 
-const signUpPage = () => {
+const SignUpPage = () => {
+    const router = useRouter();
     const handleGoogleLogin = async () => {
         await signIn.social({
             provider: "google",
@@ -111,7 +113,7 @@ const signUpPage = () => {
     );
 };
 
-export default signUpPage;
+export default SignUpPage;
 
 
 

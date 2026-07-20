@@ -6,10 +6,15 @@ import Link from "next/link";
 import { Suspense, useState } from "react";
 
 export default function SearchBooks({ books }) {
+    const [category, setCategory] = useState('All');
     const [title, setTitle] = useState('');
 
-    const filteredBooks = books.filter((book) => book.title.toLowerCase().includes(title.toLowerCase())
-    );
+    const filteredBooks = books.filter((book) => {
+        const titleFilter = book.title.toLowerCase().includes(title.toLowerCase());
+        const matchingCategory = category === 'All' || book.category === category;
+        return titleFilter && matchingCategory;
+    });
+   
 
     return (
         <Suspense fallback={
@@ -17,17 +22,58 @@ export default function SearchBooks({ books }) {
                 <span className="loading loading-spinner loading-lg text-success"></span>
                 <p className="text-success font-medium">Loading.......</p>
             </div>
-        }>
-            <div>
 
-                <SearchField name="search">
-                    <Label>Search</Label>
-                    <SearchField.Group>
-                        <SearchField.SearchIcon />
-                        <SearchField.Input onChange={(e) => setTitle(e.target.value)} className="w-70" placeholder="Search..." />
-                        <SearchField.ClearButton />
-                    </SearchField.Group>
-                </SearchField>
+        }>
+
+            <div>
+                <div className="flex justify-between">
+
+
+                    <SearchField name="search">
+                        <Label>Search</Label>
+                        <SearchField.Group>
+                            <SearchField.SearchIcon />
+                            <SearchField.Input onChange={(e) => setTitle(e.target.value)} className="w-70" placeholder="Search..." />
+                            <SearchField.ClearButton />
+                        </SearchField.Group>
+                    </SearchField>
+
+                    <ul className="menu menu-vertical lg:menu-horizontal bg-base-200 rounded-box m-2">
+
+                        <li>
+                            <button
+                                onClick={() => setCategory('All')}
+                                className={category === 'All' ? 'bg-green-300 text-white font-bold' : 'hover:bg-gray-100'}
+                            >
+                                All
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                onClick={() => setCategory('Story')}
+                                className={category === 'Story' ? 'bg-green-300 text-white font-bold' : 'hover:bg-gray-100'}
+                            >
+                                Story
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                onClick={() => setCategory('Tech')}
+                                className={category === 'Tech' ? 'bg-green-300 text-white font-bold' : 'hover:bg-gray-100'}
+                            >
+                                Tech
+                            </button>
+                        </li>
+                        <li>
+                            <button
+                                onClick={() => setCategory('Science')}
+                                className={category === 'Science' ? 'bg-green-300 text-white font-bold' : 'hover:bg-gray-100'}
+                            >
+                                Science
+                            </button>
+                        </li>
+                    </ul>
+                </div>
                 <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
                     {filteredBooks.map((book) => (
                         <div

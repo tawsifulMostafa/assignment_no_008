@@ -19,7 +19,7 @@ const LoginForm = () => {
     }
 
     useEffect(() => {
-        if (searchParams.get("reason") === "bookId-login-req") {
+        if (searchParams.get("reason") === "bookId-login-req" || "profile-login-req")   {
             toast.error("Please login first");
         }
     }, [searchParams]);

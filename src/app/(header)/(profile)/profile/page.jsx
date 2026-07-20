@@ -7,12 +7,12 @@ import Link from "next/link";
 
 
 const ProfilePage = async () => {
- 
+
     const session = await getSession()
 
-    if (!session?.user) {
-        redirect("/logIn?reason=Profile-login-req");
-    }
+    if (!session) {
+        redirect("/logIn?reason=profile-login-req");
+    };
 
     const user = session.user;
 

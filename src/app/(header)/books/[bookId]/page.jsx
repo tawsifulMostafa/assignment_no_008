@@ -1,9 +1,12 @@
 import { getSession } from "@/app/lib/session";
 import { db } from "@/app/lib/auth";
-import { Button } from "@heroui/react";
+
 import Image from "next/image";
-import Link from "next/link";
+
 import { redirect } from "next/navigation";
+
+import BorrowThisBook from "./BorrowThisBook";
+
 
 export const dynamic = "force-dynamic";
 
@@ -24,27 +27,30 @@ const BookDetailsPage = async ({ params }) => {
         return <div>Book not found.</div>;
     }
 
+
     return (
-        <div className="mx-auto card bg-base-100 w-96 shadow-sm">
-            <figure>
+        <div className="lg:md:flex grid gap-3 mx-auto justify-center ">
+            <div className="lg:md:p-8  p-3 m-3 border border-gray-500 bg-base-100 w-64 shadow-sm justify-center">
+
                 <Image
                     src={book.image_url}
                     alt={book.title}
-                    width={300}
-                    height={300}
+                    width={500}
+                    height={500}
                 />
-            </figure>
 
-            <div className="card-body">
-                <h2 className="card-title">{book.title}</h2>
-                <p>{book.description}</p>
-                <p>Category: {book.category}</p>
+            </div>
 
-                <div className="card-actions justify-end">
-                    <Button>
-                        <Link href="/books">Borrow This Book</Link>
-                    </Button>
+            <div className="pt-8 p-5 card border border-gray-400 m-4  ">
+                <h2 className="  font-semibold text-3xl">{book.title}</h2>
+                <p className="font-bold text-2xl">{book.author}</p>
+                <p className="">{book.description}</p>
+                <p className="font-bold">Category:<span className="text-green-400">{book.category}</span></p>
+                <p className="text-gray-700 ">Available Quantity:<span className="text-2xl font-bold text-black p-3">{book.available_quantity}</span>piece left..</p>
+                <div className="justify-center p-4">
+                    <BorrowThisBook></BorrowThisBook>
                 </div>
+
             </div>
         </div>
     );
