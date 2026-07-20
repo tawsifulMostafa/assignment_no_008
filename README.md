@@ -60,9 +60,7 @@ git clone https://github.com/tawsifulMostafa/assignment_no_008.git
 
 Go to the project folder
 
-```bash
-cd your-repository
-```
+ 
 
 Install dependencies
 
@@ -81,7 +79,7 @@ npm run dev
 Open
 
 ```
-http://localhost:3000
+https://assignment-no-0008.vercel.app
 ```
 
 ## 📁 Environment Variables

@@ -42,10 +42,11 @@ const BookDetailsPage = async ({ params }) => {
             </div>
 
             <div className="pt-8 p-5 card border border-gray-400 m-4  ">
-                <h2 className="  font-semibold text-3xl">{book.title}</h2>
-                <p className="font-bold text-2xl">{book.author}</p>
-                <p className="">{book.description}</p>
-                <p className="font-bold">Category:<span className="text-green-400">{book.category}</span></p>
+                <h2 className="font-semibold text-3xl">  {book.title} </h2>
+                <p >By<span className="font-bold text-2xl pl-2">{book.author}</span></p>
+                <p>{book.description}</p>
+                <p className="font-bold">Category:<span className="text-green-400 pl-2
+                ">{book.category}</span></p>
                 <p className="text-gray-700 ">Available Quantity:<span className="text-2xl font-bold text-black p-3">{book.available_quantity}</span>piece left..</p>
                 <div className="justify-center p-4">
                     <BorrowThisBook></BorrowThisBook>
